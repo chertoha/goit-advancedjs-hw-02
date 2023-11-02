@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color switcher</title>
     
+
+    <style>
+      .buttonWrapper {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+      }
+
+      .buttonWrapper button {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #000000;
+        text-transform: uppercase;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        transition: color 250ms ease, border-color 250ms ease;
+      }
+
+      .buttonWrapper button:disabled {
+        cursor: default;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      .buttonWrapper button:not(:disabled):hover {
+        border-color: tomato;
+        color: tomato;
+      }
+    </style>
     <script type="module" crossorigin src="/goit-advancedjs-hw-02/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/modulepreload-polyfill-ec808ebb.js">
     <link rel="stylesheet" href="/goit-advancedjs-hw-02/assets/common-24e32714.css">
@@ -12,8 +42,10 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <button type="button" data-start>Start</button>
-    <button type="button" data-stop>Stop</button>
+    <div class="buttonWrapper">
+      <button type="button" data-start>Start</button>
+      <button type="button" data-stop>Stop</button>
+    </div>
 
     
   </body>
