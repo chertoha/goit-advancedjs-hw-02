@@ -19,7 +19,7 @@ stopButton.addEventListener('click', () => {
 });
 
 // ------------------------------------- Helpers
-function createInterval(callback, time) {
+export function createInterval(callback, time) {
   let intervalId = null;
 
   return {
