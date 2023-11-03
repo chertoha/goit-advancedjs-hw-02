@@ -43,9 +43,15 @@ function createPromise(position, delay) {
 function getPromisResult(num, step) {
   createPromise(num, step)
     .then(({ position, delay }) => {
-      console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      iziToast.success({
+        title: 'Resolved',
+        message: `Fulfilled promise ${position} in ${delay}ms`,
+      });
     })
     .catch(({ position, delay }) => {
-      console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      iziToast.error({
+        title: 'Rejected',
+        message: `Rejected promise ${position} in ${delay}ms`,
+      });
     });
 }
