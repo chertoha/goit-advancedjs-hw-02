@@ -15,15 +15,14 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const fields = e.target.elements;
 
-  const delay = fields.delay.value;
-  const step = fields.step.value;
-  const amount = fields.amount.value;
+  let delay = Number(fields.delay.value);
+  const step = Number(fields.step.value);
+  const amount = Number(fields.amount.value);
 
-  setTimeout(() => {
-    for (let i = 1; i <= amount; i++) {
-      getPromisResult(i, step * i);
-    }
-  }, delay);
+  for (let i = 1; i <= amount; i++) {
+    getPromisResult(i, delay);
+    delay += step;
+  }
 
   form.reset();
 });
