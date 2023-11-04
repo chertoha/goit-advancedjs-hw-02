@@ -24,6 +24,8 @@ form.addEventListener('submit', e => {
       getPromisResult(i, step * i);
     }
   }, delay);
+
+  form.reset();
 });
 
 // ------------------------------- Helpers
